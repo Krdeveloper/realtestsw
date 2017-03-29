@@ -17,7 +17,7 @@ public class SupplyCompanyService {
 			return comp.selectAllCompany();
 		}
 	}*/
-	public SupplyCompany findTutorById(SupplyCompany supplyCompany) {
+	public SupplyCompany findSupplyCompanyByCode(SupplyCompany supplyCompany) {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.opensesstion()) {
 			SupplyCompanyMapper supplyCompanyMapper = new SupplyCompanyMapperImpl(sqlSession);
 			return supplyCompanyMapper.findSupplyCompanyByCode(supplyCompany);

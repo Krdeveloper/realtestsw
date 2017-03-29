@@ -26,16 +26,15 @@ public class CompTest {
 		
 		
 	}*/
-	/*@Test
-	public void aTestFindTutorById(){
-		SupplyCompany supplyCompany = new SupplyCompany();
-		supplyCompany.setCompCode("SC007");
-		
-		SupplyCompany selectSupplyCompany = supplyCompanyService.findTutorById(supplyCompany);
-		Assert.assertNotNull(selectSupplyCompany);
-	}
 	
 	@Test
+	public void testFindSupplyCompanyByCode() {
+		SupplyCompany supplyCompany = new SupplyCompany();
+		supplyCompany.setCompCode("SC007");
+		SupplyCompany findSupplyCompanyByCode = supplyCompanyService.findSupplyCompanyByCode(supplyCompany);
+		Assert.assertNotNull(supplyCompany);
+	}
+	/*@Test
 	public void testInsertSupplyCompany() {
 		SupplyCompany supplyCompany = new SupplyCompany("SC002", "testCompany", "testAddr","testTel",false);
 		int res = supplyCompanyService.insertSupplyCompany(supplyCompany);
@@ -49,12 +48,12 @@ public class CompTest {
 		Assert.assertEquals(1, res);
 	}*/
 	
-	@Test
+	/*@Test
 	public void testDeleteLogicallySupplyCompany() {
 		SupplyCompany supplyCompany = new SupplyCompany("SC007");
 		int res = supplyCompanyService.deleteLogicallySupplyCompany(supplyCompany);
 		Assert.assertEquals(1, res);
-	}
+	}*/
 	
 	
 

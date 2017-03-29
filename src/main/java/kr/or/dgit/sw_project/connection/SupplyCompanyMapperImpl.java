@@ -11,20 +11,52 @@ import kr.or.dgit.sw_project.dto.SupplyCompany;
 
 public class SupplyCompanyMapperImpl implements SupplyCompanyMapper {
 	private static final Log log = LogFactory.getLog(SupplyCompanyMapperImpl.class);
-	private SqlSession sqlsession;
-	private String namespace ="kr.or.digt.sw_project.dao.Supply_companyMapper";
+	private SqlSession sqlSession;
+	private String namespace = "kr.or.dgit.sw_project.dao.SupplyCompanyMapper.";
+
+	public SupplyCompanyMapperImpl(SqlSession sqlSession) {
+
+		this.sqlSession = sqlSession;
+	}
+
+	/*
+	 * @Override public List<SupplyCompany> selectAllCompany() {
+	 * log.debug("searchCourse()"); return sqlsession.selectList(namespace
+	 * +".selectAllCompany"); }
+	 */
+	@Override
+	public List<SupplyCompany> selectAllCompany() {
+		log.debug("selectAllCompany()");
+		return sqlSession.selectList(namespace + "selectAllCompany");		
+	}
 	
-	public SupplyCompanyMapperImpl(SqlSession sqlsession) {
-		super();
-		this.sqlsession = sqlsession;
+	@Override
+	public SupplyCompany findSupplyCompanyByCode(SupplyCompany supplyCompany) {
+		log.debug("findSupplyCompanyByCode()");
+		return sqlSession.selectOne(namespace + "findSupplyCompanyByCode", supplyCompany);
+	}
+	
+	@Override
+	public int insertSupplyCompany(SupplyCompany supplyCompany) {
+		log.debug("insertSupplyCompany()");
+		return sqlSession.insert(namespace + "insertSupplyCompany", supplyCompany);
 	}
 
 	@Override
-	public List<SupplyCompany> selectAllCompany() {
-			log.debug("searchCourse()");
-			return sqlsession.selectList(namespace +".selectAllCompany");
-		}
+	public int updateSupplyCompany(SupplyCompany supplyCompany) {
+		log.debug("updateSupplyCompany()");
+		return sqlSession.update(namespace + "updateSupplyCompany", supplyCompany);
 	}
 
+	@Override
+	public int deleteLogicallySupplyCompany(SupplyCompany supplyCompany) {
+		log.debug("deleteLogicallySupplyCompany()");
+		return sqlSession.update(namespace + "deleteLogicallySupplyCompany", supplyCompany);		
+	}
+
+	
+
+	
+}
 
 

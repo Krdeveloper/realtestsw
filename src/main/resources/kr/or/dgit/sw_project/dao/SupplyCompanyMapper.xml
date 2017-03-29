@@ -8,7 +8,9 @@
 		<result property="compTel" column="comp_tel"/>
 		<result property="compIsExist" column="comp_isExist"/>
 	</resultMap>
-	
+	<select id="selectAllCompany" parameterType="SupplyCompany" resultType="SupplyCompanyResult">
+		
+	</select>
 	<select id="findSupplyCompanyByCode" parameterType="SupplyCompany" resultMap="SupplyCompanyResult">
 		SELECT comp_code, comp_name, comp_addr, comp_tel, comp_isExist
 		FROM supply_company 

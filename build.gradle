@@ -21,11 +21,12 @@ dependencies {
 	compile group: 'org.mybatis', name: 'mybatis', version: '3.4.2'
  // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    compile files('src/erp_myframework.jar')
 }
 
 
 jar{
-	mainClassName='kr.or.digt.sw_project.Main'
+	mainClassName='kr.or.dgit.sw_project.Main'
 	baseName='Main'
 	appendix='bin'
 	version =1.0

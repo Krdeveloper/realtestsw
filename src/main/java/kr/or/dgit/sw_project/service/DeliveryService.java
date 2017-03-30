@@ -1,5 +1,30 @@
 package kr.or.dgit.sw_project.service;
 
-public class DeliveryService {
+import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+
+import kr.or.dgit.sw_project.connection.DeliveryMapperImpl;
+import kr.or.dgit.sw_project.connection.MybatisSqlSessionFactory;
+
+import kr.or.dgit.sw_project.dao.DeliveryMapper;
+
+import kr.or.dgit.sw_project.dto.Delivery;
+
+
+
+
+public class DeliveryService {
+	public List<Delivery> selectAllDelivery() {
+		try (SqlSession sqlsession = MybatisSqlSessionFactory.opensesstion()) {
+			DeliveryMapper deliveryMapper = new DeliveryMapperImpl(sqlsession);
+			return deliveryMapper.selectAllDelivery();
+		}
+	}
+	public Delivery findDeliveryByCode(Delivery delivery) {
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.opensesstion()) {
+			DeliveryMapper deliveryMapper = new DeliveryMapperImpl(sqlSession);
+			return deliveryMapper.findDeliveryByCode(delivery);
+		}
+	}
 }

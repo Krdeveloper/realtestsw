@@ -1,6 +1,7 @@
 package kr.or.dgit.sw_project.connection;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
@@ -18,16 +19,11 @@ public class SupplyCompanyMapperImpl implements SupplyCompanyMapper {
 
 		this.sqlSession = sqlSession;
 	}
-
-	/*
-	 * @Override public List<SupplyCompany> selectAllCompany() {
-	 * log.debug("searchCourse()"); return sqlsession.selectList(namespace
-	 * +".selectAllCompany"); }
-	 */
+	
 	@Override
 	public List<SupplyCompany> selectAllCompany() {
 		log.debug("selectAllCompany()");
-		return sqlSession.selectList(namespace + "selectAllCompany");		
+		return sqlSession.selectList(namespace + "selectAllCompany");
 	}
 	
 	@Override
@@ -53,6 +49,8 @@ public class SupplyCompanyMapperImpl implements SupplyCompanyMapper {
 		log.debug("deleteLogicallySupplyCompany()");
 		return sqlSession.update(namespace + "deleteLogicallySupplyCompany", supplyCompany);		
 	}
+
+	
 
 	
 

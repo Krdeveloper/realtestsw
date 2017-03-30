@@ -1,5 +1,10 @@
 package kr.or.dgit.sw_project.dao;
 
-public interface DeliveryMapper {
+import java.util.List;
 
+import kr.or.dgit.sw_project.dto.Delivery;
+
+public interface DeliveryMapper {
+	List<Delivery> selectAllDelivery();
+	Delivery findDeliveryByCode(Delivery delivery);
 }

@@ -26,7 +26,7 @@ dependencies {
 
 
 jar{
-	mainClassName='kr.or.dgit.sw_project.Main'
+	mainClassName='kr.or.dgit.sw_project.MainSupplyCompany'
 	baseName='Main'
 	appendix='bin'
 	version =1.0

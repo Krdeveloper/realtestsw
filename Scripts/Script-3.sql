@@ -343,12 +343,12 @@ UPDATE software SET sw_issale=#{swIssale}
 ################################# Delivery ################################
 
 -- 전체검색
-SELECT del_code, comp_code, sw_code, sw_code, supply_price, supply_amount, order_date, del_isExist 
+SELECT del_code, comp_code,  sw_code, supply_price, supply_amount, order_date, del_isExist 
 	FROM delivery;
 
 	
 -- 번호검색
-SELECT del_code, comp_code, sw_code, sw_code, supply_price, supply_amount, order_date, del_isExist 
+SELECT del_code, comp_code,  sw_code, supply_price, supply_amount, order_date, del_isExist 
 	FROM delivery
 	WHERE del_code="DL001";
 	

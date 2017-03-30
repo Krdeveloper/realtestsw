@@ -1,7 +1,10 @@
 package kr.or.dgit.sw_project.service;
 
-import org.apache.ibatis.session.SqlSession;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Logger;
 
+import org.apache.ibatis.session.SqlSession;
 
 import kr.or.dgit.sw_project.connection.MybatisSqlSessionFactory;
 import kr.or.dgit.sw_project.connection.SupplyCompanyMapperImpl;
@@ -11,12 +14,13 @@ import kr.or.dgit.sw_project.dto.SupplyCompany;
 public class SupplyCompanyService {
 	
 	
-	/*public List<SupplyCompany> selectAllCompany() {
+	public List<SupplyCompany> selectAllCompany() {
 		try (SqlSession sqlsession = MybatisSqlSessionFactory.opensesstion()) {
-			SupplyCompanyMapperImpl comp = new SupplyCompanyMapperImpl(sqlsession);
-			return comp.selectAllCompany();
+			SupplyCompanyMapper supplyCompanyMapper = new SupplyCompanyMapperImpl(sqlsession);
+			return supplyCompanyMapper.selectAllCompany();
 		}
-	}*/
+	}	
+	
 	public SupplyCompany findSupplyCompanyByCode(SupplyCompany supplyCompany) {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.opensesstion()) {
 			SupplyCompanyMapper supplyCompanyMapper = new SupplyCompanyMapperImpl(sqlSession);

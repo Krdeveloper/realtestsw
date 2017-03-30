@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.dgit.sw_project.dao.DeliveryMapper">
-
+	<resultMap type="Delivery" id="DeliveryResult">
+		<id property="delCode" column="del_code"/>
+		<result property="compName" column="comp_code"/>
+		<result property="swName" column="sw_code"/>
+		<result property="supplyPrice" column="supply_price"/>
+		<result property="supplyAmount" column="supply_amount"/>
+		<result property="orderDate" column="order_date"/>
+		<result property="delIsExist" column="del_isExist"/>
+	</resultMap>
+	<select id="selectAllDelivery" resultMap="DeliveryResult">
+		select * from delivery
+	</select>
+	<select id="findDeliveryByCode" parameterType="Delivery" resultMap="DeliveryResult">
+		SELECT del_code, comp_code, sw_code, sw_code, supply_price, supply_amount, order_date, del_isExist 
+		FROM delivery
+		WHERE del_code=#{delCode}
+	</select>
 </mapper>
 	

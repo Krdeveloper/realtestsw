@@ -1,5 +1,12 @@
 package kr.or.digt.sw_project.test;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.swing.text.html.parser.Entity;
+
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -21,19 +28,22 @@ public class CompTest {
 	}
 
 	/*@Test
-	public void testall() {
-		List<SupplyCompany> list  = supplyCompany.selectAllCompany();
-		
+	public void testSelectAllCompany() {
+		List<SupplyCompany> lists  = supplyCompanyService.selectAllCompany();
+		Assert.assertNotNull(lists);		
+		for(SupplyCompany supplyCompany : lists){
+			Assert.assertNotNull(supplyCompany);			
+		}
 		
 	}*/
-	
-	@Test
+
+	/*@Test
 	public void testFindSupplyCompanyByCode() {
 		SupplyCompany supplyCompany = new SupplyCompany();
 		supplyCompany.setCompCode("SC007");
 		SupplyCompany findSupplyCompanyByCode = supplyCompanyService.findSupplyCompanyByCode(supplyCompany);
 		Assert.assertNotNull(supplyCompany);
-	}
+	}*/
 	/*@Test
 	public void testInsertSupplyCompany() {
 		SupplyCompany supplyCompany = new SupplyCompany("SC002", "testCompany", "testAddr","testTel",false);

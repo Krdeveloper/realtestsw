@@ -22,11 +22,13 @@ dependencies {
  // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     compile files('src/erp_myframework.jar')
+    compile files('src/synthetica.jar')
+    compile files('src/syntheticaAluOxide.jar')
 }
 
 
 jar{
-	mainClassName='kr.or.dgit.sw_project.MainSupplyCompany'
+	mainClassName='kr.or.dgit.sw_project.MainApp'
 	baseName='Main'
 	appendix='bin'
 	version =1.0

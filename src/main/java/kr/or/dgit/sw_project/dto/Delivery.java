@@ -5,8 +5,8 @@ import java.util.Date;
 public class Delivery {
 	//소프트웨어 납품
 	private String delCode; 
-	private String compName;
-	private String swName;
+	private String compCode;
+	private String swCode;
 	private int supplyPrice;
 	private int supplyAmount;
 	private Date orderDate;
@@ -20,12 +20,12 @@ public class Delivery {
 	}
 
 
-	public Delivery(String delCode, String compName, String swName, int supplyPrice, int supplyAmount, Date orderDate,
+	public Delivery(String delCode, String compCode, String swCode, int supplyPrice, int supplyAmount, Date orderDate,
 			boolean delIsExist) {
 		
 		this.delCode = delCode;
-		this.compName = compName;
-		this.swName = swName;
+		this.compCode = compCode;
+		this.swCode = swCode;
 		this.supplyPrice = supplyPrice;
 		this.supplyAmount = supplyAmount;
 		this.orderDate = orderDate;
@@ -41,19 +41,19 @@ public class Delivery {
 	}
 
 	public String getCompName() {
-		return compName;
+		return compCode;
 	}
 
 	public void setCompName(String compName) {
-		this.compName = compName;
+		this.compCode = compName;
 	}
 
 	public String getSwName() {
-		return swName;
+		return swCode;
 	}
 
-	public void setSwName(String swName) {
-		this.swName = swName;
+	public void setSwName(String swCode) {
+		this.swCode = swCode;
 	}
 
 	public int getSupplyPrice() {
@@ -90,7 +90,7 @@ public class Delivery {
 
 	@Override
 	public String toString() {
-		return "Delivery [delCode=" + delCode + ", compName=" + compName + ", swName=" + swName + ", supplyPrice="
+		return "Delivery [delCode=" + delCode + ", compCode=" + compCode + ", swCode=" + swCode + ", supplyPrice="
 				+ supplyPrice + ", supplyAmount=" + supplyAmount + ", orderDate=" + orderDate + ", delIsExist="
 				+ delIsExist + "]";
 	}

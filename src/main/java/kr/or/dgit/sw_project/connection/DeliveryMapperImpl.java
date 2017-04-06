@@ -31,4 +31,16 @@ public class DeliveryMapperImpl implements DeliveryMapper {
 		return sqlSession.selectOne(namespace + "findDeliveryByCode", delivery);
 	}
 
+	@Override
+	public int insertDelivery(Delivery delivery) {
+		log.debug("insertDelivery()");
+		return sqlSession.insert(namespace + "insertDelivery", delivery);
+	}
+
+	@Override
+	public int deleteLogicallyDelivery(Delivery delivery) {
+		log.debug("deleteLogicallyDelivery()");
+		return sqlSession.update(namespace + "deleteLogicallyDelivery", delivery);	
+	}
+
 }

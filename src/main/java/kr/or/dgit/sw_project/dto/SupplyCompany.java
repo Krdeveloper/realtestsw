@@ -73,5 +73,7 @@ public class SupplyCompany {
 		return String.format("SupplyCompany [compCode=%s, compName=%s, compAddr=%s, compTel=%s, compIsExist=%s]",
 				compCode, compName, compAddr, compTel, compIsExist);
 	}
-	
+	public Object[] toArray() {
+		return new Object[]{compCode, compName, compAddr, compTel, compIsExist};
+	}
 }

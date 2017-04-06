@@ -14,6 +14,8 @@ import kr.or.dgit.sw_project.dto.Delivery;
 
 
 
+
+
 public class DeliveryService {
 	public List<Delivery> selectAllDelivery() {
 		try (SqlSession sqlsession = MybatisSqlSessionFactory.opensesstion()) {
@@ -25,6 +27,23 @@ public class DeliveryService {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.opensesstion()) {
 			DeliveryMapper deliveryMapper = new DeliveryMapperImpl(sqlSession);
 			return deliveryMapper.findDeliveryByCode(delivery);
+		}
+	}
+	public int insertDelivery (Delivery delivery) {
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.opensesstion()) {
+			DeliveryMapper deliveryMapper = new DeliveryMapperImpl(sqlSession);
+			int res = deliveryMapper.insertDelivery(delivery);
+			sqlSession.commit();
+			return res;
+		}
+	}
+	
+	public int deleteLogicallyDelivery (Delivery delivery) {
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.opensesstion()) {
+			DeliveryMapper deliveryMapper = new DeliveryMapperImpl(sqlSession);
+			int res = deliveryMapper.deleteLogicallyDelivery(delivery);
+			sqlSession.commit();
+			return res;
 		}
 	}
 }

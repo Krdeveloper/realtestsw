@@ -1,5 +1,6 @@
 package kr.or.digt.sw_project.test;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.AfterClass;
@@ -36,6 +37,19 @@ public class DeliveryTest {
 		delivery.setDelCode("DL002");
 		Delivery findDeliveyByCode = deliveryService.findDeliveryByCode(delivery);
 		Assert.assertNotNull(delivery);
+	}
+	/*@Test
+	public void testInsertDelivery() {
+		Delivery delivery = new Delivery("DL009", "SC001", "SW003", 20000, 100, new Date(), false);
+		int res = deliveryService.insertDelivery(delivery);
+		Assert.assertEquals(1, res);
+	}*/
+	
+	@Test
+	public void testDeleteLogicallySDelivery() {
+		Delivery delivery = new Delivery("DL003");
+		int res = deliveryService.deleteLogicallyDelivery(delivery);
+		Assert.assertEquals(1, res);
 	}
 
 }

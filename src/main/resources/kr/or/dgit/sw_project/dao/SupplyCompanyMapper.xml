@@ -8,8 +8,26 @@
 		<result property="compTel" column="comp_tel"/>
 		<result property="compIsExist" column="comp_isExist"/>
 	</resultMap>
+	<!-- Select SQL -->
+    <sql id="selectSQL">
+		SELECT comp_code, comp_name, comp_addr, comp_tel, comp_isExist
+		FROM supply_company 
+	</sql>
+	<!-- Where SQL -->
+	<sql id="whereSQL">
+		<where>
+			<if test="compCode != null">
+				comp_code=#{compCode};
+			</if>
+		</where>
+	</sql>
+	    
+    <!-- Select By All --> 
+    
 	<select id="selectAllCompany"  resultMap="SupplyCompanyResult">
-		SELECT * from supply_company
+		<include refid="selectSQL" />
+    		where comp_isExist = true
+    		ORDER BY comp_code
 	</select>
 	<select id="findSupplyCompanyByCode" parameterType="SupplyCompany" resultMap="SupplyCompanyResult">
 		SELECT comp_code, comp_name, comp_addr, comp_tel, comp_isExist

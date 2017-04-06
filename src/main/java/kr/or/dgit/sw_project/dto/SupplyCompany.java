@@ -1,5 +1,7 @@
 package kr.or.dgit.sw_project.dto;
 
+import java.util.List;
+
 public class SupplyCompany {
 	//공급회사
 	private String compCode;
@@ -7,6 +9,7 @@ public class SupplyCompany {
 	private String compAddr;
 	private String compTel;
 	private boolean compIsExist;
+	private List<Delivery> delivery;
 	
 	public SupplyCompany() {}
 	
@@ -67,6 +70,19 @@ public class SupplyCompany {
 	public void setCompIsExist(boolean compIsExist) {
 		this.compIsExist = compIsExist;
 	}
+	
+
+	public List<Delivery> getDelivery() {
+		return delivery;
+	}
+
+
+
+	public void setDelivery(List<Delivery> delivery) {
+		this.delivery = delivery;
+	}
+
+
 
 	@Override
 	public String toString() {

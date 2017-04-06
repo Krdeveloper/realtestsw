@@ -56,7 +56,7 @@ public class MainTab extends JFrame implements ActionListener {
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		
 		//tabbedPane.add("주문 관리",new ViewSale());
-		//tabbedPane.add("납품 관리",new ViewDelivery());
+		tabbedPane.add("납품 관리",new ViewDelivery());
 		//tabbedPane.add("거래내역 조회",new ViewList());
 		
 		JPanel pButton = new JPanel();
